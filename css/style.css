@@ -1,0 +1,414 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+ul {
+  margin: 0;
+}
+h1 {
+  text-align: center;
+}
+.color {
+  color: #F4716A;
+}
+.ribbon {
+  background: url('../img/ribbons.png') -216px -61px no-repeat;
+  width: 190px;
+  height: 44px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  line-height: 37px;
+  padding: 0;
+  text-align: center;
+  color: #fff;
+  z-index: 999;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+}
+.ribbon-top {
+  background: url('../img/ribbons.png') 0 -60px no-repeat;
+  width: 210px;
+  height: 45px;
+  position: static;
+  font-size: 22px;
+  line-height: 43px;
+  font-weight: 600;
+  margin: 10px 0 30px 140px;
+  padding: 0;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+}
+.background {
+  background-image: url('../img/wood.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+.content-center {
+  width: 90%;
+  margin: 0 auto;
+}
+.padding-top {
+  width: 100%;
+  padding-top: 4%;
+}
+.recipe_day {
+  width: 75%;
+  margin: 0 auto;
+}
+.recipe_day .recipe_day_e i {
+  font-size: 25px;
+  margin-top: 7em;
+}
+.adv {
+  width: 100%;
+}
+.featured {
+  position: relative;
+  margin-bottom: 10%;
+}
+.featured .description {
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+  height: 9em;
+}
+.featured .description .container_description {
+  position: absolute;
+  bottom: 15px;
+  left: 20%;
+}
+.featured .description h2 {
+  text-align: center;
+  font-size: 1.5em;
+}
+.featured .description p {
+  display: inline;
+  margin: 10px;
+}
+.featured figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.featured figure img {
+  display: block;
+}
+.featured figure figcaption {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  text-align: center;
+  background-color: #FF7B74;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s all ease-in;
+}
+.featured figure figcaption:hover {
+  opacity: 0.8;
+}
+.featured figure figcaption a {
+  width: 100%;
+  height: 100%;
+}
+.featured figure figcaption a i {
+  color: #fff;
+  margin-top: 6em;
+}
+.featured figure figcaption a span {
+  color: #fff;
+  z-index: 999;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.head {
+  width: 100%;
+}
+.head nav {
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+.head .nav {
+  background-color: #fff;
+  width: 70%;
+  position: fixed;
+  top: 0;
+  left: 15%;
+  z-index: 1000;
+  text-transform: uppercase;
+  margin: 0;
+}
+.head .nav .user-nav li {
+  background-color: #F4716A;
+  height: 100%;
+  float: right;
+}
+.head .nav .user-nav li:nth-child(3n+1) {
+  background-color: #FF7B74;
+}
+.head .nav .user-nav li:hover {
+  background: #fff;
+}
+.head .nav .user-nav li a {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.head .nav .user-nav li a:hover {
+  color: #000;
+}
+.head .nav ul {
+  color: #000;
+}
+.head .nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px;
+  transition: all 0.2s ease-in;
+}
+.head .nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding: 10px;
+  display: block;
+  transition: all 0.2s ease-in;
+}
+.head .nav .main-nav li {
+  float: left;
+}
+.head .nav .main-nav li:hover {
+  background-color: #F4716A;
+}
+.head .nav .main-nav li a:hover {
+  color: #fff;
+}
+.clearfix {
+  clear: both;
+}
+.main {
+  width: 100%;
+  font-size: 1.1em;
+  background: url('../img/strawberries.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.main .search .form {
+  padding: 1em;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.main .search .form p {
+  text-align: left;
+}
+.main .search input[type="submit"],
+.main .search input[type="search"] {
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: none;
+  border-left: 2px solid #FF7B74;
+  transition: 0.7s all ease;
+}
+.main .search input[type="submit"]:hover {
+  background: #FF8E88;
+  cursor: pointer;
+}
+.main .recipe_of_the_day {
+  width: 100%;
+  margin-bottom: 35px;
+}
+.main .recipe_of_the_day img {
+  width: 100%;
+}
+.main .intro {
+  padding-top: 6em;
+  padding-bottom: 3em;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+.main input,
+.main textarea {
+  padding: 15px;
+  outline: none;
+  border: none;
+  margin: 10px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  display: block;
+}
+.main input[type=submit] {
+  background-color: #F4716A;
+  color: #fff;
+  padding: 10px;
+  box-shadow: none;
+}
+.main-section h2 {
+  margin: 1em;
+}
+.main-section .category {
+  text-align: center;
+}
+.main-section .category .category-nav {
+  margin-top: 2em;
+}
+.main-section .category .category-nav ul li {
+  display: block;
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 15px;
+}
+.main-section .category .category-nav ul li:nth-child(3n+1) {
+  background-color: #F4716A;
+}
+.main-section .category .category-nav ul li:nth-child(3n+2) {
+  background-color: #FF7B74;
+}
+.main-section .category .category-nav ul li:nth-child(3n+3) {
+  background-color: #FF8E88;
+}
+.main-section .category .category-nav ul li:hover {
+  -webkit-box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  transition: 0.4s all ease;
+}
+.main-section .category .category-nav ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  transition: 0.4 all ease;
+  line-height: 60px;
+}
+.main-section .category .category-nav ul li i {
+  color: #fff;
+  display: block;
+  font-size: 30px;
+}
+.main-section .category .category-nav ul li i:hover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+  transition: 0.5s all ease;
+}
+.latest {
+  margin-top: 3em;
+}
+.latest img {
+  max-height: 235px;
+  width: auto;
+}
+.add_recipe {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+.add_recipe form {
+  padding: 3.5em;
+  margin-bottom: 1.5em;
+}
+.add_recipe form input,
+.add_recipe form select {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+  margin-top: 3%;
+  width: 50%;
+  transition: 0.5s all ease-in-out;
+}
+.add_recipe form input:focus,
+.add_recipe form select:focus {
+  border-bottom: 1px solid #F4716A;
+}
+.add_recipe form textarea {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-left: 1px solid #000;
+  margin-top: 3%;
+  width: 50%;
+  transition: 0.5s all ease-in-out;
+}
+.add_recipe form textarea:focus {
+  border-left: 1px solid #F4716A;
+}
+.add_recipe form section {
+  margin-top: 5%;
+}
+.add_recipe form .remove {
+  font-size: 37px;
+  padding: 0;
+  width: 37px;
+  height: 37px;
+  line-height: 15px;
+  background-color: #FF8E88;
+  border: none;
+  color: #fff;
+  margin: 30px;
+  transition: 0.7s all ease;
+}
+.add_recipe form .remove:hover {
+  background-color: #F4716A;
+  cursor: pointer;
+}
+.add_recipe form #add_ingr {
+  background-color: #FF8E88;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  transition: 0.7s all ease;
+}
+.add_recipe form #add_ingr:hover {
+  background-color: #F4716A;
+  cursor: pointer;
+}
+.add_recipe form input[type="submit"] {
+  background-color: #F4716A;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  transition: 0.7s all ease;
+  width: 100%;
+}
+.add_recipe form input[type="submit"]:hover {
+  background-color: #FF8E88;
+  cursor: pointer;
+}
+.add_recipe form input[type='file'] {
+  display: none;
+}
+.add_recipe form #file_input {
+  background-color: #FF8E88;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  transition: 0.7s all ease;
+  z-index: 999;
+}
+.add_recipe form #file_input:hover {
+  cursor: pointer;
+  background-color: #F4716A;
+}
