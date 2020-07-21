@@ -30,7 +30,7 @@
         </header>
 
         <!-- Główna część strony ---------------------------------->
-        <div class="padding-top background container-fluid">
+        <div class="padding-top background">
             <section class="row">
                 <div class="col">
                     <div class="add_recipe">
@@ -53,7 +53,6 @@
                                     <option value="Surówki">Surówki</option>
                                     <option value="Zupa">Zupa</option>
                                     <option value="Pizza">Pizza</option>
-                                    <option value="Ryby">Ryby</option>
                                     <option value="Śniadanie">Śniadanie</option>
                                 </select>
                                 <select name="difficult" id="difficult">
@@ -106,7 +105,7 @@
                                 $target = "img/".basename($zdjecie);
 
 
-                                $statement = $mysqli->prepare('INSERT przepisy (nazwa, kategoria, skladniki, wykonanie, zdjecie, czas, trudnosc) VALUES (?,?,?,?,?,?,?)');
+                                $statement = $mysqli->prepare('INSERT przepisy (nazwa, kategoria, skladniki, wykonanie, zdjecie, czas, trudnosc, data_dodania) VALUES (?,?,?,?,?,?,?, CURDATE())');
                                 $statement->bind_param('sssssis', $nazwa, $kategoria, $skladniki, $wykonanie, $zdjecie, $czas, $trudnosc);
                                 $statement->execute();
                                 $statement->close();

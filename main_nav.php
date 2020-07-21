@@ -11,7 +11,7 @@ $nav = <<< HTML
 </ul>
 <ul class="user-nav">
     <li><a href="add.php">Dodaj przepis</a></li>
-    <li><a href="#">Logowanie / Rejestracja</a></li>
+    <li><a href="login.php">Logowanie / Rejestracja</a></li>
 </ul>
 </nav>
 

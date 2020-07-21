@@ -1,13 +1,13 @@
-@main-color: #F4716A;
-@color2:  #FF7B74;;
-@color3:  #FF8E88;
+@main-color: #d2a679;
+@color2:  #dfbf9f;
+@color3:  #ecd9c6;
 
 *
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
 }
 
@@ -25,6 +25,10 @@ ul
 h1
 {
     text-align: center;
+    font-size: 3em;
+    letter-spacing: 2px;
+    margin-top: .5em;
+    padding: 20px;
 }
 
 .color
@@ -32,9 +36,15 @@ h1
     color: @main-color;
 }
 
+.row
+{
+    text-align: center;
+    margin: 0 auto;
+}
+
 .ribbon
 {
-    background: url('../img/ribbons.png') -216px -61px no-repeat;
+    background: url('../img/ribbons2.png') -216px -61px no-repeat;
     width: 190px;
     height: 44px;
     position: absolute;
@@ -52,7 +62,7 @@ h1
 
 .ribbon-top
 {
-    background: url('../img/ribbons.png') 0 -60px no-repeat;
+    background: url('../img/ribbons2.png') 0 -60px no-repeat;
     width: 210px;
     height: 45px;
     position: static;
@@ -66,20 +76,6 @@ h1
     display: inline-block;
     overflow: hidden;
     max-width: 100%;
-}
-
-.background
-{
-    background-image: url('../img/wood.jpg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: fixed;
-}
-
-.content-center
-{
-    width: 90%;
-    margin: 0 auto;
 }
 
 .padding-top
@@ -97,8 +93,8 @@ h1
     {
         i
         {
-            font-size: 25px;
-        margin-top: 7em;
+            font-size: 40px;
+            margin-top: 7em;
         }
     }
 }
@@ -108,35 +104,46 @@ h1
     width: 100%;
 }
 
+.article
+{
+    display: flex;
+    flex-direction: column;
+    width: 345.75px;
+}
+
 .featured
     {
         position: relative;
-        margin-bottom: 10%;
+        margin-bottom: 4em;
+        display: inline-block;
+        
 
         .description
         {
-            background-color: #fff;
-            padding: 1rem;
+            background-color: rgba(0,0,0,0.1);
+            padding: .5em;
             text-align: center;
             height: 9em;
-
-            .container_description
-            {
-                position: absolute;
-                bottom: 15px;
-                left: 20%;
-            }
 
             h2
             {
                 text-align: center;
                 font-size: 1.5em;
+                padding: 15px;
             }
 
             p
             {
-                display: inline;
                 margin: 10px;
+                display: inline;
+                font-size: 1.1em;
+            }
+
+            .divider-recipe-day
+            {
+                width: 40%;
+                display: block;
+                margin: 0 auto;
             }
         }
 
@@ -151,6 +158,7 @@ h1
             img
             {
                 display: block;
+                width: 100%;
             }
 
             figcaption
@@ -313,46 +321,11 @@ h1
 {
     width: 100%;
     font-size: 1.1em;
-    background: url('../img/strawberries.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-    .search
-    {
-
-        .form
-        {
-            padding: 1em;
-            width: 70%;
-            background-color: rgba(255,255,255,0.9);
-
-            p
-            {
-                text-align: left;
-            }
-        }
-
-        input[type="submit"],
-        input[type="search"]
-        {
-            width: 100%;
-            margin: 0 auto;
-            box-shadow: none;
-            border-left: 2px solid @color2;
-            transition: 0.7s all ease;
-        }
-
-        input[type="submit"]:hover
-        {
-            background: @color3;
-            cursor: pointer;
-        }
-    }
 
     .recipe_of_the_day
     {
-        width: 100%;
-        margin-bottom: 35px;
+        width: 80%;
+        margin: 0 auto;
 
         img
         {
@@ -369,6 +342,20 @@ h1
         padding-bottom: 3em;
         font-size: 1em;
         letter-spacing: 1px;
+
+        h3
+        {
+            font-size: 2em;
+            text-align: center;
+            letter-spacing: 3px;
+            padding: 20px;
+        }
+
+        .ornament
+        {
+            width: 100%;
+            height: 10em;
+        }
     }
 
     input, textarea
@@ -403,6 +390,8 @@ h1
     .category
     {
         text-align: center;
+        display: flex;
+        justify-content: center;
         
 
         .category-nav
@@ -481,14 +470,25 @@ h1
 {
     margin-top: 3em;
 
-    img
+    .recipe_image
     {
-        max-height: 235px;
-        width: auto;
+        height: 235px;
     }
+    
 }
 
-.add_recipe
+.container_description
+{
+    margin: 5px;
+}
+
+.divider
+{
+    width: 70%;
+}
+
+.add_recipe,
+.add_user
 {
     background-color: #fff;
     width: 80%;
@@ -499,20 +499,22 @@ h1
     {
         padding: 3.5em;
         margin-bottom: 1.5em;
+        background: rgba(236, 217, 198, 0.3);
 
         input,select
         {
             outline: none;
             border: none;
+            border-radius: 3px 3px 3px 3px;
             padding: 10px;
-            border-bottom: 1px solid #000;
+            border-left: 3px solid @color3;
             margin-top: 3%;
             width: 50%;
             transition: .5s all ease-in-out;
 
             &:focus
             {
-                border-bottom: 1px solid @main-color;
+                border-left: 3px solid @main-color;
             }
         }
 
@@ -521,55 +523,21 @@ h1
             border: none;
             outline: none;
             padding: 10px;
-            border-left: 1px solid #000;
+            border-left: 3px solid @color3;
             margin-top: 3%;
             width: 50%;
             transition: .5s all ease-in-out;
 
             &:focus
             {
-                border-left: 1px solid @main-color;
+                border-left: 3px solid @main-color;
             }
         }
 
         section
         {
             margin-top: 5%;
-        }
-
-        .remove
-        {
-            font-size: 37px;
-            padding: 0;
-            width: 37px;
-            height: 37px;
-            line-height: 15px;
-            background-color: @color3;
-            border: none;
-            color: #fff;
-            margin: 30px;
-            transition: .7s all ease;
-
-            &:hover
-            {
-                background-color: @main-color;
-                cursor: pointer;
-            }
-        }
-
-        #add_ingr
-        {
-            background-color: @color3;
-            border: none;
-            color: #fff;
-            padding: 10px;
-            transition: .7s all ease;
-
-            &:hover
-            {
-                background-color: @main-color;
-                cursor: pointer;
-            }
+            text-align: left;
         }
 
         input[type="submit"]
@@ -579,11 +547,12 @@ h1
             color: #fff;
             padding: 10px;
             transition: .7s all ease;
-            width: 100%;
+            width: 50%;
+            
 
             &:hover
             {
-                background-color: @color3;
+                background-color: @color2;
                 cursor: pointer;
             }
         }
@@ -595,7 +564,7 @@ h1
 
         #file_input
         {
-            background-color: @color3;
+            background-color: @main-color;
             border: none;
             color: #fff;
             padding: 10px;
@@ -605,7 +574,7 @@ h1
             &:hover
             {
                 cursor: pointer;
-                background-color: @main-color;
+                background-color: @color2;
             }
         }
     }

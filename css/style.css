@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
 }
 body {
@@ -14,12 +14,20 @@ ul {
 }
 h1 {
   text-align: center;
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin-top: 0.5em;
+  padding: 20px;
 }
 .color {
-  color: #F4716A;
+  color: #d2a679;
+}
+.row {
+  text-align: center;
+  margin: 0 auto;
 }
 .ribbon {
-  background: url('../img/ribbons.png') -216px -61px no-repeat;
+  background: url('../img/ribbons2.png') -216px -61px no-repeat;
   width: 190px;
   height: 44px;
   position: absolute;
@@ -35,7 +43,7 @@ h1 {
   max-width: 100%;
 }
 .ribbon-top {
-  background: url('../img/ribbons.png') 0 -60px no-repeat;
+  background: url('../img/ribbons2.png') 0 -60px no-repeat;
   width: 210px;
   height: 45px;
   position: static;
@@ -50,16 +58,6 @@ h1 {
   overflow: hidden;
   max-width: 100%;
 }
-.background {
-  background-image: url('../img/wood.jpg');
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: fixed;
-}
-.content-center {
-  width: 90%;
-  margin: 0 auto;
-}
 .padding-top {
   width: 100%;
   padding-top: 4%;
@@ -69,34 +67,42 @@ h1 {
   margin: 0 auto;
 }
 .recipe_day .recipe_day_e i {
-  font-size: 25px;
+  font-size: 40px;
   margin-top: 7em;
 }
 .adv {
   width: 100%;
 }
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 345.75px;
+}
 .featured {
   position: relative;
-  margin-bottom: 10%;
+  margin-bottom: 4em;
+  display: inline-block;
 }
 .featured .description {
-  background-color: #fff;
-  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
   text-align: center;
   height: 9em;
-}
-.featured .description .container_description {
-  position: absolute;
-  bottom: 15px;
-  left: 20%;
 }
 .featured .description h2 {
   text-align: center;
   font-size: 1.5em;
+  padding: 15px;
 }
 .featured .description p {
-  display: inline;
   margin: 10px;
+  display: inline;
+  font-size: 1.1em;
+}
+.featured .description .divider-recipe-day {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
 }
 .featured figure {
   position: relative;
@@ -105,6 +111,7 @@ h1 {
 }
 .featured figure img {
   display: block;
+  width: 100%;
 }
 .featured figure figcaption {
   opacity: 0;
@@ -113,7 +120,7 @@ h1 {
   left: 0;
   z-index: 9;
   text-align: center;
-  background-color: #FF7B74;
+  background-color: #dfbf9f;
   width: 100%;
   height: 100%;
   transition: 0.5s all ease-in;
@@ -156,12 +163,12 @@ h1 {
   margin: 0;
 }
 .head .nav .user-nav li {
-  background-color: #F4716A;
+  background-color: #d2a679;
   height: 100%;
   float: right;
 }
 .head .nav .user-nav li:nth-child(3n+1) {
-  background-color: #FF7B74;
+  background-color: #dfbf9f;
 }
 .head .nav .user-nav li:hover {
   background: #fff;
@@ -195,7 +202,7 @@ h1 {
   float: left;
 }
 .head .nav .main-nav li:hover {
-  background-color: #F4716A;
+  background-color: #d2a679;
 }
 .head .nav .main-nav li a:hover {
   color: #fff;
@@ -206,33 +213,10 @@ h1 {
 .main {
   width: 100%;
   font-size: 1.1em;
-  background: url('../img/strawberries.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-.main .search .form {
-  padding: 1em;
-  width: 70%;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-.main .search .form p {
-  text-align: left;
-}
-.main .search input[type="submit"],
-.main .search input[type="search"] {
-  width: 100%;
-  margin: 0 auto;
-  box-shadow: none;
-  border-left: 2px solid #FF7B74;
-  transition: 0.7s all ease;
-}
-.main .search input[type="submit"]:hover {
-  background: #FF8E88;
-  cursor: pointer;
 }
 .main .recipe_of_the_day {
-  width: 100%;
-  margin-bottom: 35px;
+  width: 80%;
+  margin: 0 auto;
 }
 .main .recipe_of_the_day img {
   width: 100%;
@@ -242,6 +226,16 @@ h1 {
   padding-bottom: 3em;
   font-size: 1em;
   letter-spacing: 1px;
+}
+.main .intro h3 {
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 3px;
+  padding: 20px;
+}
+.main .intro .ornament {
+  width: 100%;
+  height: 10em;
 }
 .main input,
 .main textarea {
@@ -255,7 +249,7 @@ h1 {
   display: block;
 }
 .main input[type=submit] {
-  background-color: #F4716A;
+  background-color: #d2a679;
   color: #fff;
   padding: 10px;
   box-shadow: none;
@@ -265,6 +259,8 @@ h1 {
 }
 .main-section .category {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .main-section .category .category-nav {
   margin-top: 2em;
@@ -277,13 +273,13 @@ h1 {
   padding: 15px;
 }
 .main-section .category .category-nav ul li:nth-child(3n+1) {
-  background-color: #F4716A;
+  background-color: #d2a679;
 }
 .main-section .category .category-nav ul li:nth-child(3n+2) {
-  background-color: #FF7B74;
+  background-color: #dfbf9f;
 }
 .main-section .category .category-nav ul li:nth-child(3n+3) {
-  background-color: #FF8E88;
+  background-color: #ecd9c6;
 }
 .main-section .category .category-nav ul li:hover {
   -webkit-box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
@@ -315,100 +311,95 @@ h1 {
 .latest {
   margin-top: 3em;
 }
-.latest img {
-  max-height: 235px;
-  width: auto;
+.latest .recipe_image {
+  height: 235px;
 }
-.add_recipe {
+.container_description {
+  margin: 5px;
+}
+.divider {
+  width: 70%;
+}
+.add_recipe,
+.add_user {
   background-color: #fff;
   width: 80%;
   margin: 0 auto;
   margin-top: 5%;
 }
-.add_recipe form {
+.add_recipe form,
+.add_user form {
   padding: 3.5em;
   margin-bottom: 1.5em;
+  background: rgba(236, 217, 198, 0.3);
 }
 .add_recipe form input,
-.add_recipe form select {
+.add_user form input,
+.add_recipe form select,
+.add_user form select {
   outline: none;
   border: none;
+  border-radius: 3px 3px 3px 3px;
   padding: 10px;
-  border-bottom: 1px solid #000;
+  border-left: 3px solid #ecd9c6;
   margin-top: 3%;
   width: 50%;
   transition: 0.5s all ease-in-out;
 }
 .add_recipe form input:focus,
-.add_recipe form select:focus {
-  border-bottom: 1px solid #F4716A;
+.add_user form input:focus,
+.add_recipe form select:focus,
+.add_user form select:focus {
+  border-left: 3px solid #d2a679;
 }
-.add_recipe form textarea {
+.add_recipe form textarea,
+.add_user form textarea {
   border: none;
   outline: none;
   padding: 10px;
-  border-left: 1px solid #000;
+  border-left: 3px solid #ecd9c6;
   margin-top: 3%;
   width: 50%;
   transition: 0.5s all ease-in-out;
 }
-.add_recipe form textarea:focus {
-  border-left: 1px solid #F4716A;
+.add_recipe form textarea:focus,
+.add_user form textarea:focus {
+  border-left: 3px solid #d2a679;
 }
-.add_recipe form section {
+.add_recipe form section,
+.add_user form section {
   margin-top: 5%;
+  text-align: left;
 }
-.add_recipe form .remove {
-  font-size: 37px;
-  padding: 0;
-  width: 37px;
-  height: 37px;
-  line-height: 15px;
-  background-color: #FF8E88;
-  border: none;
-  color: #fff;
-  margin: 30px;
-  transition: 0.7s all ease;
-}
-.add_recipe form .remove:hover {
-  background-color: #F4716A;
-  cursor: pointer;
-}
-.add_recipe form #add_ingr {
-  background-color: #FF8E88;
+.add_recipe form input[type="submit"],
+.add_user form input[type="submit"] {
+  background-color: #d2a679;
   border: none;
   color: #fff;
   padding: 10px;
   transition: 0.7s all ease;
+  width: 50%;
 }
-.add_recipe form #add_ingr:hover {
-  background-color: #F4716A;
+.add_recipe form input[type="submit"]:hover,
+.add_user form input[type="submit"]:hover {
+  background-color: #dfbf9f;
   cursor: pointer;
 }
-.add_recipe form input[type="submit"] {
-  background-color: #F4716A;
-  border: none;
-  color: #fff;
-  padding: 10px;
-  transition: 0.7s all ease;
-  width: 100%;
-}
-.add_recipe form input[type="submit"]:hover {
-  background-color: #FF8E88;
-  cursor: pointer;
-}
-.add_recipe form input[type='file'] {
+.add_recipe form input[type='file'],
+.add_user form input[type='file'] {
   display: none;
 }
-.add_recipe form #file_input {
-  background-color: #FF8E88;
+.add_recipe form #file_input,
+.add_user form #file_input {
+  background-color: #d2a679;
   border: none;
   color: #fff;
   padding: 10px;
   transition: 0.7s all ease;
   z-index: 999;
 }
-.add_recipe form #file_input:hover {
+.add_recipe form #file_input:hover,
+.add_user form #file_input:hover {
   cursor: pointer;
-  background-color: #F4716A;
+  background-color: #dfbf9f;
 }

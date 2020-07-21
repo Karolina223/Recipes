@@ -13,8 +13,8 @@
         <title>MasterCook</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
+        
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">  
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/e853b470a5.js" crossorigin="anonymous"></script>
     </head>
@@ -31,10 +31,12 @@
         </header>
 
         <!-- Główna część strony ---------------------------------->
-        <main class="main container-fluid">
-            <div class="intro row">
-                <div class="intro-text col">
-                    <h1><span class="color">MasterCook</span> - Twój przepis na sukces w kuchni!</h1>
+        <main class="main">
+            <div class="intro">
+                <div class="intro-text">
+                    <h1 class="color">The Beauty Chef</h1>
+                    <img class="ornament" src="img/floral.svg" alt="">
+                    <h3>Twój przepis na sukces w kuchni!</h3>
                 </div>
             </div>
             <?php require('dbconnect.php');
@@ -45,8 +47,8 @@
 
                 $main = <<< HTML
 
-            <div class="row justify-content-center">
-            <div class="recipe_of_the_day col-lg-6 col-sm-12">
+            <div class="row">
+            <div class="recipe_of_the_day">
                 <div class="featured recipe_day">
                     <header class="title-ribbon">
                         <h3 class="ribbon">Przepis dnia!</h3>
@@ -63,21 +65,13 @@
                         </figure>
                         <div class="description">
                             <h2>$random_recipe[nazwa]</h2>
-                            <p>Nie masz pomysłu, a chcesz coś zjeść? Może przygotujemy dzisiaj przepis dnia?</p>
+                            <img class="divider-recipe-day" src="img/divider.svg" alt="">
+                            <div class="container_description">
+                            <p><i class="far fa-clock"></i>&nbsp$random_recipe[czas] min</p>
+                            <p><i class="fas fa-signal"></i>&nbsp$random_recipe[trudnosc]</p>
+                            </div>
                         </div>
                     </article>
-                </div>
-            </div>
-                    
-            <div class="search col-lg-4 col-sm-12">
-                <div class="form">
-                <h3>Co masz ochotę zjeść?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit iure aut esse odio veritatis architecto, laudantium voluptates dolores saepe sapiente quas eveniet aliquam laboriosam, molestias non pariatur.</p>
-                <form action="#">
-                    <input type="search" placeholder="Szukaj przepisu..">
-                    <br/>
-                    <input type="submit" value="Szukaj &#8674;">
-                </form>
                 </div>
             </div>
             </div>
@@ -88,24 +82,22 @@ echo $main;
             
         </main>
         <!-- Kategorie ----------------------------------------->
-        <article class="background">
-            <section class="main-section container-fluid">
-                <div class="category row justify-content-around">
-                    <div class="col-10">
-                        <nav class="category-nav">
-                        <?php require('nav_category.php'); ?>
-                        </nav>
-                    </div>
+        <article>
+            <section class="main-section">
+                <div class="category row">
+                    <nav class="category-nav">
+                    <?php require('nav_category.php'); ?>
+                    </nav>
                 </div>
             </section>
 
             <!-- Ostatnio dodane ---------------------------------------------- -->
-            <section class="latest container-fluid">
+            <section class="latest">
                 <header class="title-ribbon">
                     <h3 class="ribbon-top">Ostatnio dodane</h3>
                 </header>
             
-                <div class="row justify-content-center content-center">
+                <div class="row">
                         
                         
                             <?php require('dbconnect.php'); 
@@ -114,11 +106,11 @@ echo $main;
                                 while ($recipe = mysqli_fetch_array($result))
                                 {
                                     $recipe_var = <<< HTML
-                                    <div class="col-lg-3 col-sm-6">
+                                    
                                     <div class="featured">
-                                    <article>
+                                    <article class="article">
                                     <figure>
-                                    <img src="img/$recipe[zdjecie]">
+                                    <img class="recipe_image" src="img/$recipe[zdjecie]">
                                     <figcaption>
                                     <a href=''>
                                     <i class="fas fa-eye"></i>
@@ -128,7 +120,7 @@ echo $main;
                                     </figure>
                                     <div class="description">
                                     <h2>$recipe[nazwa]</h2>
-                                    <hr>
+                                    <img class="divider" src="img/divider.svg" alt="">
                                     <div class="container_description">
                                     <p><i class="far fa-clock"></i>&nbsp$recipe[czas] min</p>
                                     <p><i class="fas fa-signal"></i>&nbsp$recipe[trudnosc]</p>
@@ -136,7 +128,6 @@ echo $main;
                                     </div>
                                     </article>
                                     </div>
-                                </div>
                                     
             
 HTML;
@@ -146,23 +137,22 @@ echo $recipe_var;
                             </div>
                             </section>
 
-                <section class="latest container-fluid">
+                <section class="latest">
                     <header class="title-ribbon">
                         <h3 class="ribbon-top">Losowe przepisy</h3>
                     </header>
-                    <div class="row content-center">
+                    <div class="row">
 
                     <?php require('dbconnect.php'); 
-                                $result2 = $mysqli->query('SELECT * FROM przepisy ORDER BY RAND() LIMIT 3');
+                                $result2 = $mysqli->query('SELECT * FROM przepisy ORDER BY RAND() LIMIT 4');
                                 
                                 while ($recipe = mysqli_fetch_array($result2))
                                 {
                                     $recipe_var2 = <<< HTML
-                                    <div class="col-lg-3 col-sm-6">
                                     <div class="featured">
-                                    <article>
+                                    <article class="article">
                                     <figure>
-                                    <img src="img/$recipe[zdjecie]">
+                                    <img  class="recipe_image" src="img/$recipe[zdjecie]">
                                     <figcaption>
                                     <a href=''>
                                     <i class="fas fa-eye"></i>
@@ -172,7 +162,7 @@ echo $recipe_var;
                                     </figure>
                                     <div class="description">
                                     <h2>$recipe[nazwa]</h2>
-                                    <hr>
+                                    <img class="divider" src="img/divider.svg" alt="">
                                     <div class="container_description">
                                     <p><i class="far fa-clock"></i>&nbsp$recipe[czas] min</p>
                                     <p><i class="fas fa-signal"></i>&nbsp$recipe[trudnosc]</p>
@@ -180,7 +170,6 @@ echo $recipe_var;
                                     </div>
                                     </article>
                                     </div>
-                                </div>
                                     
             
 HTML;
